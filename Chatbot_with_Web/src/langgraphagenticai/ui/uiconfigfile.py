@@ -1,20 +1,27 @@
+import os
+from pathlib import Path
 from configparser import ConfigParser
 
 
 class Config:
-    def __init__(self,config_file="./src/langgraphagenticai/ui/uiconfigfile.ini"):
-        self.config=ConfigParser()
+    def __init__(self, config_file=None):
+        if config_file is None:
+            config_file = Path(__file__).parent / "uiconfigfile.ini"
+        self.config = ConfigParser()
         self.config.read(config_file)
 
     def get_llm_options(self):
-        return self.config["DEFAULT"].get("LLM_OPTIONS").split(", ")
+        val = self.config["DEFAULT"].get("LLM_OPTIONS", "")
+        return val.split(", ") if val else []
     
     def get_usecase_options(self):
-        return self.config["DEFAULT"].get("USECASE_OPTIONS").split(", ")
+        val = self.config["DEFAULT"].get("USECASE_OPTIONS", "")
+        return val.split(", ") if val else []
 
     def get_groq_model_options(self):
-        return self.config["DEFAULT"].get("GROQ_MODEL_OPTIONS").split(", ")
+        val = self.config["DEFAULT"].get("GROQ_MODEL_OPTIONS", "")
+        return val.split(", ") if val else []
     
-    def get_page_title(self):
-        return self.config["DEFAULT"].get("PAGE_TITLE")
+    def get_page_title(self) -> str:
+        return self.config["DEFAULT"].get("PAGE_TITLE", "LangGraph: Build Stateful Agentic AI graph")
     
