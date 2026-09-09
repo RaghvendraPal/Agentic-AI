@@ -1,0 +1,11 @@
+[project]
+name = "basic-chatbot"
+version = "0.1.0"
+description = "Basic Chatbot using LangGraph and Streamlit"
+requires-python = ">=3.10"
+
+[tool.pyrefly]
+search-path = ["."]
+
+[tool.pyright]
+extraPaths = ["."]

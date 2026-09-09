@@ -1,0 +1,23 @@
+langchain
+ipykernel
+python-dotenv
+langchain-openai
+beautifulsoup4
+langchain_community
+faiss-cpu
+streamlit
+langchain_groq
+langchain_core
+fastAPI
+uvicorn
+langserve
+sse_starlette
+langchain_chroma
+langchain_huggingface
+# sentence-transformers
+onnxruntime
+langchain-google-genai
+langgraph
+arxiv==1.4.8
+wikipedia
+langgraph-cli[inmem]

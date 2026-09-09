@@ -1,0 +1,40 @@
+[project]
+name = "krish-langchain-practice"
+version = "0.1.0"
+description = "LangChain and Generative AI practice repository"
+readme = "README.md"
+authors = [
+    { name = "Raghvendra", email = "raghvendrapal65@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "langchain>=0.1.0",
+    "langchain-core>=0.1.0",
+    "langchain-community>=0.0.1",
+    "langchain-openai>=0.0.1",
+    "langchain-groq>=0.0.1",
+    "langchain-google-genai>=0.0.1",
+    "langchain-chroma>=0.1.0",
+    "langchain-huggingface>=0.0.1",
+    "sentence-transformers>=2.2.0",
+    "onnxruntime<1.21.0",
+    "faiss-cpu>=1.7.4",
+    "beautifulsoup4>=4.12.0",
+    "streamlit>=1.30.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "langserve[all]>=0.0.30",
+    "sse-starlette>=1.6.0",
+    "python-dotenv>=1.0.0",
+    "ipykernel>=6.25.0",
+]
+
+[project.scripts]
+krish-langchain-practice = "krish_langchain_practice:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pyright]
+extraPaths = ["Chatbot_with_Web"]
